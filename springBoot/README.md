@@ -1,5 +1,4 @@
-Spring Boot
-# Descripción de un API en Spring Boot y Guía de Ejecución
+# Descripción API en Spring Boot y Guía de Ejecución
 
 ## API en Spring Boot
 
