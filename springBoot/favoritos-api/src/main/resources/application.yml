@@ -1,0 +1,107 @@
+spring:
+  application:
+    name: Favorites
+  profiles:
+    active: default
+  cloud:
+    discovery:
+      client:
+        composite-indicator:
+          enabled: false
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:favdb
+    username: sa
+    password: pass
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    
+logging:
+  level:
+    cl.sodexo.favorites: INFO    
+  
+server:
+  port: 8089
+          
+info:
+  app:
+    description: '@project.description@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+    name: '@project.name@'
+    version: '@project.version@' 
+            
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+  use-fqn: true
+
+swagger:
+  configuracion:
+    apiinfo:
+      titulo: ${spring.application.name} - ${spring.profiles.active}
+      version: ${info.app.version}
+      descripcion: Microservices ${spring.application.name} -> ${spring.profiles.active}
+      termsOfServiceUrl:
+      license: Swagger license ${spring.profiles.active}
+      licenseUrl: 
+    documentacion:
+      swgg: http://localhost:${server.port}/swagger-ui.html#
+      docs: http://localhost:${server.port}/api-docs.yaml
+
+management:
+  endpoint:
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /api/v1/favorite
+      exposure:
+        include: "*"
+
+servicio:
+  path: api/v1/favorites
+  name: Favorites APIs
+  description: Api para realizar la accion CRUD de noticias favoritas
+  status-200-description: Successful Ok.
+  status-204-description: Successful Operation.     
+  status-422-description: Consulta no procesable debido a que los parámetros no cumple con sus restricciones.        
+  app-favorites-post:
+    name: Guardar Favoritos
+    resource: /
+    description: Permite guardar una noticia como favorita.
+    params-description: Datos de entrada para guardar la noticia favorita.
+  app-favorites-get:
+    name: Obtener Favoritos
+    resource: /
+    description: Permite obtener el o los favoritos guardados.
+    params-description: Datos de entrada para buscar una noticia favorita.
+  app-favorites-put:
+    name: Actualizar Favoritos
+    resource: /
+    description: Permite actualizar una noticia favorita.
+    params-description: Datos de entrada para actualizar una noticia favorita.
+  app-favorites-delete:
+    name: Eliminar Favoritos
+    resource: /
+    description: Permite eliminar una noticia favorita guardada.
+    params-description: Identificador de noticia favorita.
+
+        

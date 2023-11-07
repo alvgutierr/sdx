@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">app</a>
+  </div>
+</nav>
+
+<div class="content" role="main">
+  
+  <h3>App Noticias</h3>
+
+  <div class="card-container">
+    <a class="card" [routerLink]="['']">
+      <span>Home</span>
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </a>
+
+    <a class="card" [routerLink]="['/news']">
+      <span>Noticias</span>
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </a>
+    <a class="card" [routerLink]="['/favorites']">
+      <span>Favoritos</span>
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </a>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <!-- Footer -->
+  <footer>
+      <a href="https://github.com/alvgutierr/sdx" target="_blank" rel="noopener"> Repo del test.
+        <div class="github-star-badge">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          Star
+        </div>
+      </a>
+  </footer>
+
+</div>
+

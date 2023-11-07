@@ -1,0 +1,362 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Favorites - default",
+        "description": "Microservices Favorites -> default",
+        "termsOfService": "",
+        "contact": {},
+        "license": {
+            "name": "Swagger license default",
+            "url": ""
+        },
+        "version": "0.0.1-SNAPSHOT"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8089",
+            "description": "Generated server url"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Favorites APIs",
+            "description": "Api para realizar la accion CRUD de noticias favoritas"
+        }
+    ],
+    "paths": {
+        "/api/v1/favorites/": {
+            "get": {
+                "tags": [
+                    "Favorites APIs"
+                ],
+                "summary": "Obtener Favoritos",
+                "description": "Permite obtener el o los favoritos guardados.",
+                "operationId": "getAllFavorites",
+                "responses": {
+                    "200": {
+                        "description": "Successful Ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/cl.sodexo.favorites.model.ArticleResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Consulta no procesable debido a que los parámetros no cumple con sus restricciones.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/cl.sodexo.favorites.controller.error.ApiError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Favorites APIs"
+                ],
+                "summary": "Actualizar Favoritos",
+                "description": "Permite actualizar una noticia favorita.",
+                "operationId": "updateFavorite",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/cl.sodexo.favorites.model.ArticleRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Ok."
+                    },
+                    "422": {
+                        "description": "Consulta no procesable debido a que los parámetros no cumple con sus restricciones.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/cl.sodexo.favorites.controller.error.ApiError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Favorites APIs"
+                ],
+                "summary": "Guardar Favoritos",
+                "description": "Permite guardar una noticia como favorita.",
+                "operationId": "saveFavorite",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/cl.sodexo.favorites.model.ArticleRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Ok."
+                    },
+                    "422": {
+                        "description": "Consulta no procesable debido a que los parámetros no cumple con sus restricciones.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/cl.sodexo.favorites.controller.error.ApiError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/favorites/{partialArticleTitle}": {
+            "get": {
+                "tags": [
+                    "Favorites APIs"
+                ],
+                "summary": "Obtener Favoritos",
+                "description": "Permite obtener el o los favoritos guardados.",
+                "operationId": "getFavorites",
+                "parameters": [
+                    {
+                        "name": "partialArticleTitle",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Ok.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/cl.sodexo.favorites.model.ArticleResponse"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Consulta no procesable debido a que los parámetros no cumple con sus restricciones.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/cl.sodexo.favorites.controller.error.ApiError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/favorites/{articleId}": {
+            "delete": {
+                "tags": [
+                    "Favorites APIs"
+                ],
+                "summary": "Eliminar Favoritos",
+                "description": "Permite eliminar una noticia favorita guardada.",
+                "operationId": "deleteFavorite",
+                "parameters": [
+                    {
+                        "name": "articleId",
+                        "in": "path",
+                        "description": "Article Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Ok."
+                    },
+                    "422": {
+                        "description": "Consulta no procesable debido a que los parámetros no cumple con sus restricciones.",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/cl.sodexo.favorites.controller.error.ApiError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "cl.sodexo.favorites.controller.error.ApiError": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "Código de estado HTTP aplicable a este problema.",
+                        "default": "422"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Resumen breve y legible del problema.",
+                        "default": "data invalida"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "List de errores",
+                        "items": {
+                            "type": "string",
+                            "description": "List de errores"
+                        }
+                    }
+                }
+            },
+            "cl.sodexo.favorites.model.ArticleRequest": {
+                "required": [
+                    "events",
+                    "featured",
+                    "id",
+                    "image_url",
+                    "launches",
+                    "news_site",
+                    "published_at",
+                    "summary",
+                    "title",
+                    "updated_at",
+                    "url"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Id de la noticia",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "titulo de la noticia",
+                        "default": "0"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "url de la noticia",
+                        "default": "0"
+                    },
+                    "image_url": {
+                        "type": "string",
+                        "description": "Imagen de la noticia",
+                        "default": "0"
+                    },
+                    "news_site": {
+                        "type": "string",
+                        "description": "Site de la noticia",
+                        "default": "0"
+                    },
+                    "summary": {
+                        "type": "string",
+                        "description": "Resumen noticia ",
+                        "default": "0"
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "description": "Fecha publicacion noticia",
+                        "default": "0"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "description": "Fecha actualizacion noticia",
+                        "default": "0"
+                    },
+                    "featured": {
+                        "type": "string",
+                        "description": "Presentacion de la noticia",
+                        "default": "0"
+                    },
+                    "launches": {
+                        "type": "array",
+                        "description": "Lanzamiento de la noticia",
+                        "items": {
+                            "type": "string",
+                            "description": "Lanzamiento de la noticia",
+                            "default": "[]"
+                        },
+                        "default": []
+                    },
+                    "events": {
+                        "type": "array",
+                        "description": "Eventos de la noticia",
+                        "items": {
+                            "type": "string",
+                            "description": "Eventos de la noticia",
+                            "default": "[]"
+                        },
+                        "default": []
+                    }
+                },
+                "description": "Datos de entrada para guardar la noticia favorita."
+            },
+            "cl.sodexo.favorites.model.ArticleResponse": {
+                "required": [
+                    "articleId",
+                    "articleTitle",
+                    "dataArticle",
+                    "favoriteCreateDatetime",
+                    "id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Id interno del favorito",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    "articleId": {
+                        "type": "integer",
+                        "description": "Id de la noticia",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    "articleTitle": {
+                        "type": "string",
+                        "description": "Titulo de la noticia",
+                        "default": "Titulo"
+                    },
+                    "dataArticle": {
+                        "type": "string",
+                        "description": "Datos de la noticia",
+                        "default": "{}"
+                    },
+                    "favoriteCreateDatetime": {
+                        "type": "string",
+                        "description": "Fecha creacion favorito",
+                        "format": "date-time"
+                    }
+                }
+            }
+        }
+    }
+}
