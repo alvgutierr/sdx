@@ -6,7 +6,7 @@ Este documento describe un API desarrollado en Spring Boot que proporciona servi
 El API se encarga de gestionar la lógica del servidor y la persistencia de datos, mientras que la aplicación web en Angular es la interfaz de usuario que permite a los usuarios interactuar con los datos y realizar diversas operaciones.
 
 ## API en Spring Boot 
-#### Ver instalacion en (https://github.com/alvgutierr/sdx/blob/main/springBoot/README.md)
+#### Ver instalacion en [API SpringBoot](https://github.com/alvgutierr/sdx/blob/main/springBoot/README.md)
 
 ### Descripción
 
@@ -24,7 +24,7 @@ El API en Spring Boot es una parte esencial de la aplicación que permite la com
 - `DELETE /api/v1/favorites/{id}`: Elimina un favorito existente por su identificador.
 
 ## Aplicación Web en Angular
-#### Ver instalacion en (https://github.com/alvgutierr/sdx/blob/main/angular/README.md)
+#### Ver instalacion en [Aplicación Angular](https://github.com/alvgutierr/sdx/blob/main/angular/README.md)
 
 ### Descripción
 
