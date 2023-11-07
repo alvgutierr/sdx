@@ -10,7 +10,7 @@ Este proyecto fue generado con las siguientes versiones:
 ### Características Clave
 
 - Visualización de noticias, la aplicación permite a los usuarios ver noticias recopiladas de una API de noticias.
-- Visualización de detalles de noticias, Los usuarios pueden hacer clic en una noticia de la lista para ver más detalles.
+- Visualización de detalles de noticias, Los usuarios pueden hacer click en una noticia de la lista para ver más detalles.
 - Favoritos, los usuarios pueden marcar una noticia como favorita para guardarla y acceder fácilmente a ella más tarde.
 - Gestión de favoritos, la aplicación permite a los usuarios gestionar su lista de favoritos, incluyendo agregar y eliminar noticias de la lista de favoritos.
 - Integración de APIs, la aplicación consume dos APIs diferentes: un API de noticias para obtener las noticias y un API de favoritos para gestionar los favoritos de los usuarios.
@@ -52,7 +52,7 @@ http://localhost:4200
 La aplicación se cargará en tu navegador, y podrás explorarla y probarla. La aplicación se recargará automáticamente si realizas cambios en el código fuente.
 
 ## Ejecutar la aplicacion Angular en un Contenedor Docker
-### Esta sección describe cómo construir y ejecutar la aplicacione Angular en un contenedor Docker, lo que facilita su despliegue en diferentes entornos
+### Esta sección describe cómo construir y ejecutar la aplicacion Angular en un contenedor Docker, lo que facilita su despliegue en diferentes entornos
 
 Además de la ejecución local, puedes ejecutar la aplicaion Angular en un contenedor Docker para facilitar la distribución y el despliegue.
 
@@ -69,8 +69,7 @@ Asegúrate de tener Docker instalado en tu sistema. Puedes descargar e instalar 
     ```
   Esto creará una imagen Docker con el nombre web-fav basada en el Dockerfile del proyecto.
 
-2. **Ejecutar el Contenedor Docker**
-  Ejecutar el Contenedor: Una vez construida la imagen, puedes ejecutar la aplicacion Angular en un contenedor Docker con el siguiente comando:
+2. **Ejecutar el Contenedor Docker**: Una vez construida la imagen, puedes ejecutar la aplicacion Angular en un contenedor Docker con el siguiente comando:
 
   ```bash
   docker run -d --name web-favorites -it -p 81:80 web-fav
