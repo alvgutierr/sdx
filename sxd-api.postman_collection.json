@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "2cea8ef0-d74d-423a-b228-3f7d82d28355",
+		"name": "sxd-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5982738"
+	},
+	"item": [
+		{
+			"name": "All Favorites",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/favorites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"favorites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Favorite",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"title\": \"title 21111111111\",\r\n  \"url\": \"string\",\r\n  \"image_url\": \"string\",\r\n  \"news_site\": \"string\",\r\n  \"summary\": \"string\",\r\n  \"published_at\": \"string\",\r\n  \"updated_at\": \"string\",\r\n  \"featured\": \"string\",\r\n  \"launches\": \"[]\",\r\n  \"events\": \"[]\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/favorites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"favorites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Favorite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2120,\r\n    \"title\": \"LeoLabs data shows on-orbit maneuvers by Russian satellites\",\r\n    \"url\": \"https://spacenews.com/leolabs-data-shows-on-orbit-maneuvers-by-russian-satellites/\",\r\n    \"image_url\": \"https://spacenews.com/wp-content/uploads/2023/11/Resurs-P3-Cosmos-2562-ProxOps-300x137.jpg\",\r\n    \"news_site\": \"SpaceNews\",\r\n    \"summary\": \"The space tracking firm LeoLabs over the past year tracked two Russian satellites performing rendezvous and proximity operations.\",\r\n    \"published_at\": \"2023-11-06T23:44:42Z\",\r\n    \"updated_at\": \"2023-11-06T23:54:11.113000Z\",\r\n    \"featured\": false,\r\n    \"launches\": [\"1\",\"2\"],\r\n    \"events\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/favorites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"favorites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Favorite",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/favorites/21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"favorites",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Favorites By Title",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8089/api/v1/favorites/title",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8089",
+					"path": [
+						"api",
+						"v1",
+						"favorites",
+						"title"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
