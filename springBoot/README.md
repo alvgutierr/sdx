@@ -10,7 +10,7 @@ El API en Spring Boot es una aplicación backend desarrollada utilizando el fram
 - Utiliza Spring Boot para una configuración rápida y sencilla.
 - Ofrece endpoints RESTful para realizar operaciones como crear, leer, actualizar y eliminar (CRUD) datos.
 - Conecta con una base de datos H2 para almacenar y recuperar información.
-- Es consumido por la aplicacion web dewsarrollada en Angular.
+- Es consumido por la aplicacion web desarrollada en Angular.
 
 ## Instrucciones para Ejecutar el API en Spring Boot
 
@@ -28,9 +28,9 @@ Asegúrate de que tu entorno cumpla con los siguientes requisitos:
 
 2. **Navegar al Directorio del Proyecto**: Abre una terminal y navega al directorio raíz del proyecto del API.
 
-3. **Compilar el Proyecto**: Ejecuta el siguiente comando para compilar el proyecto utilizando Maven:
+3. **Compilar el Proyecto**: Ejecuta los siguientes comando para compilar el proyecto utilizando Maven.
 
-Ejecutar el API: Ejecutar los test ubitarios con el siguiente comando:
+Ejecutar el API: Ejecutar los test unitarios con el siguiente comando:
   ```bash
   mvn test
   ```
